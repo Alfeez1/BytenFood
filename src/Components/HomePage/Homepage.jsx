@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Typography, Button, Box, Grid } from '@material-ui/core';
-
+import { Container, Typography,  Box, Grid } from '@material-ui/core';
+import { useNavigate } from 'react-router-dom';
+import MenuButton from '../../Fields/MenuButton';
 const useStyles = makeStyles((theme) => ({
   container: {
     height: '100vh',
@@ -49,58 +50,43 @@ const useStyles = makeStyles((theme) => ({
     // width: '90%',
     margin: '10px 40px 25px 40px',
   },
-  button: {
-    fontSize: '24px',
-    fontWeight: '700',
-    fontFamily: 'inter',
-    width: '255px',
-    height: '60px',
-    // marginBottom: theme.spacing(1),
-    color: '#A21219',
-    textTransform: 'none',
-    boxSizing: 'border-box',
-    backgroundColor: '#F8F8F8',
-    border: '1px solid rgba(37, 37, 37, 0.1)',
-    borderRadius: '7px',
-    boxShadow: ' 0px 4px 4px rgba(0, 0, 0, 0.25)',
-    marginBottom: theme.spacing(2),
-  },
+
   smallLogo: {},
 }));
 
 function HomePage() {
   const classes = useStyles();
-
+  const navigate = useNavigate();
   return (
-    <Container maxWidth="sm" className={classes.container}>
-      <Box className={classes.gridContainer}>
-        <Box className={classes.gridItem}>
-          <img
-            src="/logo/BYTENFOOD_Branco.png"
-            alt="Logo"
-            className={classes.logoImg}
-          />
+    <>
+      <Container maxWidth="sm" className={classes.container}>
+        <Box className={classes.gridContainer}>
+          <Box className={classes.gridItem}>
+            <img
+              src="/logo/BYTENFOOD_Branco.png"
+              alt="Logo"
+              className={classes.logoImg}
+            />
+          </Box>
         </Box>
-      </Box>
-      <Typography align="center" className={classes.mainHeading}>
-        Bem-vindo ao
-      </Typography>
-      <Typography align="center" className={classes.subHeading}>
-        Byte 'n Food
-      </Typography>
-      <Typography className={classes.paragraph}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        efficitur facilisis velit ut accumsan.
-      </Typography>
-      <Button variant="contained" size="large" className={classes.button}>
-        Ver cardápios
-      </Button>
-      <Grid container justifyContent="center" className={classes.smallLogo}>
-        <Grid item>
-          <img src="/logo/Go-it.svg" alt="Small Logo" />
+        <Typography align="center" className={classes.mainHeading}>
+          Bem-vindo ao
+        </Typography>
+        <Typography align="center" className={classes.subHeading}>
+          Byte 'n Food
+        </Typography>
+        <Typography className={classes.paragraph}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          efficitur facilisis velit ut accumsan.
+        </Typography>
+        <MenuButton label="Ver cardápios" onClick={() => navigate('/menu')} />
+        <Grid container justifyContent="center" className={classes.smallLogo}>
+          <Grid item>
+            <img src="/logo/Go-it.svg" alt="Small Logo" />
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 }
 
