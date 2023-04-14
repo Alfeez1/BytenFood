@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Typography,  Box, Grid } from '@material-ui/core';
+import { Container, Typography, Box, Grid, Button } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 import MenuButton from '../../Fields/MenuButton';
 const useStyles = makeStyles((theme) => ({
@@ -10,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '20px 20px 10px 20px',
   },
   gridContainer: {
     width: '100%',
@@ -17,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   gridItem: {
-    width: '321px',
-    height: '271px',
+    width: '301px',
+    height: '251px',
     backgroundColor: '#A21219',
     borderRadius: '50%',
     display: 'flex',
@@ -79,7 +81,25 @@ function HomePage() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           efficitur facilisis velit ut accumsan.
         </Typography>
-        <MenuButton label="Ver cardápios" onClick={() => navigate('/menu')} />
+        <Button
+          style={{
+            width: '80%',
+            fontSize: '24px',
+            fontWeight: '700',
+            height: '60px',
+            color: '#A21219',
+            textTransform: 'none',
+            boxSizing: 'border-box',
+            backgroundColor: '#F8F8F8',
+            border: '1px solid rgba(37, 37, 37, 0.1)',
+            borderRadius: '7px',
+            boxShadow: ' 0px 4px 4px rgba(0, 0, 0, 0.25)',
+            marginBottom: 8,
+          }}
+          onClick={() => navigate('/menu')}
+        >
+          Ver cardápios
+        </Button>
         <Grid container justifyContent="center" className={classes.smallLogo}>
           <Grid item>
             <img src="/logo/Go-it.svg" alt="Small Logo" />

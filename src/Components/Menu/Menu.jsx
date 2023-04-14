@@ -65,7 +65,11 @@ function HomePage() {
             <Typography variant="h6" className={classes.subtitle}>
               CARDÁPIO:
             </Typography>
-            <Box display="flex" alignItems="center">
+            <Box
+              style={{
+                padding: '0px 25px 0px 25px',
+              }}
+            >
               <MenuButton label="Principal" onClick={handleBreakfastClick} />
               <MenuButton label="Kids" onClick={handleLunchClick} />
               <MenuButton label="Natal" onClick={handleDinnerClick} />
